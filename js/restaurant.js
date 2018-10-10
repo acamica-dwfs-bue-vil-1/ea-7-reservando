@@ -29,11 +29,7 @@ function promedio (numeros) {
 }
 
 Restaurant.prototype.obtenerPuntuacion = function() {
-    if (this.calificaciones.length === 0) {
-        return 0;
-    } else {
-        return promedio(this.calificaciones);
-    }
-
+    let resultado = this.calificaciones.length === 0 ? 0 : promedio(this.calificaciones);
+    return resultado;
 }
 
