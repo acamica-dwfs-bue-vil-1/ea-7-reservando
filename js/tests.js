@@ -82,3 +82,19 @@ describe('Obtener restaurantes filtrados a través de la búsqueda', function(){
     expect(restaurnatesFiltrados.length).to.be.equal(24);    
   });
 });
+
+//TDD
+describe('Agregar una nueva reserva', function(){
+  it('Se debe calcular correctamente el precio base.',function(){
+    const reserva1 = new Reserva (new Date(2018, 7, 24, 11, 00), 8, 350, "DES1")
+    const reserva2 = new Reserva (new Date(2018, 7, 27, 14, 100), 2, 150, "DES200")
+    expect(reserva1.calcularPrecioBase()).to.be.equal(2800);    
+    expect(reserva2.calcularPrecioBase()).to.be.equal(300);    
+  });
+  it('Se debe calcular correctamente el precio final.',function(){
+    const reserva1 = new Reserva (new Date(2018, 7, 24, 11, 00), 8, 350, "DES1")
+    const reserva2 = new Reserva (new Date(2018, 7, 27, 14, 100), 2, 150, "DES200")
+    expect(reserva1.calcularPrecioFinal()).to.be.equal(2310);    
+    expect(reserva2.calcularPrecioFinal()).to.be.equal(100);  
+  });
+});
